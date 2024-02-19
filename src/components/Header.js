@@ -27,7 +27,7 @@ const Header = () => {
     <div className="flex justify-between bg-[#FFF2D7] shadow-lg">
       {heading}
       <div className="nav-items">
-        <ul className="flex gap-5 py-10 ml-[900px]">
+        <ul className="flex gap-5 py-10 ml-[800px]">
           <li data-testid="online-status">
             Online Status:{isonline ? "✅" : "🔴"}
           </li>
@@ -52,9 +52,9 @@ const Header = () => {
       </div>
       {/* <span className="text-black font-bold p-10"></span> */}
       {islogin ? (
-        <button onClick={() => setlogin(false)}>login</button>
+        <button onClick={() => setlogin(false)}>Login</button>
       ) : (
-        <button onClick={() => setlogin(true)}>logout</button>
+        <button onClick={() => setlogin(true)}>Logout</button>
       )}
     </div>
   );
