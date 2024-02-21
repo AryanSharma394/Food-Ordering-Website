@@ -26,9 +26,9 @@ const Body = () => {
     setallrestaurant(
       json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    console.log(
-      json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    // console.log(
+    //   json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
     setfilteredrestaurant(
       json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
