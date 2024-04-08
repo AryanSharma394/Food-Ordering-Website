@@ -13,7 +13,7 @@ const RestaurantCard = ({
   return (
     <div className="shadow-xl bg-[#FFF2D7] rounded-lg w-[230px] h-[380px] hover:bg-orange-200 hover:scale-105 transition-transform m-4 p-4 ">
       <img
-        className="w-[200px] h-[150px] rounded-lg "
+        className="w-[200px] h-[150px] rounded-lg mb-4"
         src={IMG_CDN + cloudinaryImageId}
       />
       <h2 className="font-bold">{name}</h2>
