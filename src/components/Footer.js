@@ -1,12 +1,13 @@
 const Footer = () => {
     return (
         <>
-        <hr/>
-    <h3>Footer</h3>
+       <div className="h-52">
+
+       </div>
     </>
   
     )
 };
 
 
-export default Footer
+export default Footer;

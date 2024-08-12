@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import Body from "./src/components/Body";
 import Header from "./src/components/Header";
-import Footer from "./src/components/Footer";
 import About from "./src/components/About";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import Error from "./src/components/Error";

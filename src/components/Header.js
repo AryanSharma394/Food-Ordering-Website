@@ -4,58 +4,53 @@ import useOnline from "../../utils/useOnline";
 import Usercontext from "../../utils/Usercontext";
 import { useSelector } from "react-redux";
 
-const heading = (
+const Logo = (
   <img
     data-testid="logo"
-    className="h-[104px]"
+    className="h-[80px] rounded-lg"
     alt="logo"
     src="https://img.freepik.com/free-vector/food-shopping-logo-template-design_460848-10299.jpg"
   ></img>
 );
 
 const Header = () => {
-  const [islogin, setlogin] = useState(false);
-
-  const isonline = useOnline();
-
-  // const { user } = useContext(Usercontext);
-
+  const [isLogin, setLogin] = useState(false);
+  const isOnline = useOnline();
   const cartItems = useSelector((store) => store.cart.items);
-  // console.log(cartItems);
 
   return (
-    <div className="flex justify-between bg-[#FFF2D7] shadow-lg">
-      {heading}
-      <div className="nav-items">
-        <ul className="flex gap-5 py-10 ml-[800px]">
-          <li data-testid="online-status">
-            Online Status:{isonline ? "✅" : "🔴"}
-          </li>
-          <li className="px-2">
-            <Link to="/">Home</Link>
-          </li>
-          {/* <li className="px-2">
-            <Link to="/About">About</Link>
-          </li> */}
-          <li className="px-2">
-            <Link to="/Contacts">Contacts</Link>
-          </li>
-          {/* <li className="px-2">
-            <Link to="/Instamart">Instamart</Link>
-          </li> */}
+    <div className="flex justify-between bg-[#aed8ac] shadow-lg px-6 py-3 sticky top-0 z-10">
+      <div className="flex items-center">{Logo}</div>
+      <div className="flex items-center">
+        <ul className="flex gap-11 font-medium">
           <li>
-            <Link data-testid="cart" to="/cart">
+            <span data-testid="online-status" className="font-bold mr-2">
+              Online Status:
+            </span>
+            {isOnline ? (
+              <span className="text-green-600">✅</span>
+            ) : (
+              <span className="text-red-600">🔴</span>
+            )}
+          </li>
+          <li className="">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/Contacts" className="nav-link">
+              Contacts
+            </Link>
+          </li>
+          <li>
+            <Link to="/cart" className="nav-link" data-testid="cart">
               Cart : {cartItems.length} items
             </Link>
           </li>
         </ul>
       </div>
-      {/* <span className="text-black font-bold p-10"></span> */}
-      {islogin ? (
-        <button onClick={() => setlogin(false)}>Login</button>
-      ) : (
-        <button onClick={() => setlogin(true)}>Logout</button>
-      )}
+     
     </div>
   );
 };
